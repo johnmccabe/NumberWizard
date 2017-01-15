@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NumberWizard : MonoBehaviour {
 	// Use this for initialisation
-	int max = 1000;
-	int min = 1;
-	int guess = 500;
+	int max;
+	int min;
+	int guess;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +14,12 @@ public class NumberWizard : MonoBehaviour {
 	}
 
 	void StartGame () {
+		// Use this for initialisation
+		max = 1000;
+		min = 1;
+		guess = 500;
+
+		print ("========================");
 		print ("Welcome to Number Wizard");
 		print ("Pick a number in your head, but don't tell me!");
 
@@ -40,7 +46,8 @@ public class NumberWizard : MonoBehaviour {
 			max = guess;
 			NextGuess ();
 		} else if (Input.GetKeyDown (KeyCode.Return)) {
-            print("I won!");
+			print("I won!");
+			StartGame ();
 		} 
 	}
 
